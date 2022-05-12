@@ -11,7 +11,6 @@ RUN ${HOME}/.cargo/bin/cargo install -f cargo-fuzz
 ## Add source code to the build stage.
 ADD . /symbolic
 WORKDIR /symbolic
-RUN ${HOME}/.cargo/bin/cargo build
 RUN cd symbolic-debuginfo && ${HOME}/.cargo/bin/cargo build && ${HOME}/.cargo/bin/cargo fuzz build --fuzz-dir ./fuzz
 
 # Package Stage
